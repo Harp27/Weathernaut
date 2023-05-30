@@ -58,4 +58,4 @@ $(document).ready(() => {
     };
   });
 
-// notes: remove decimal points, Begin styling: get a background, make search bar & display transparent, random setting?, logo for website & tab, social media links
+// notes: Begin styling: get a background, make search bar & display transparent, random setting?, logo for website & tab, social media links
