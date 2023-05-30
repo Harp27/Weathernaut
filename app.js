@@ -1,7 +1,7 @@
 
 $(document).ready(() => {
   // Store api key for weather API
-    const apiKey = "30331a8fd0d5806e0c3503b6a59497d5";
+    const apiKey = "2e4a3eb25a6a8ea367ff9fb0852e3f6c";
   // get search from html
     const $searchForm = $(".search");
   // get weather info from html
@@ -24,6 +24,7 @@ $(document).ready(() => {
   // convert celsius to fahrenheit
         .then((data) => {
           const celsiusTemperature = data.main.temp;
+          const fahrenheitTemperature = convertToFarheneit(celsiusTemperature);
           const weatherInfo = {
             temperature: fahrenheitTemperature,
             description: data.weather[0].description
@@ -39,7 +40,7 @@ $(document).ready(() => {
   // convert from celsius to fahrenheit
     const displayWeatherInfo = (weatherInfo) => {
       const { temperature, description } = weatherInfo;
-      const fahrenheitTemperature = convertToFarhenheit(temperature);
+      const fahrenheitTemperature = convertToFarheneit(temperature);
   // display the temp, and current description of the weather
       const weatherInfoHTML = `
         <h2>Current Weather</h2>
@@ -50,8 +51,10 @@ $(document).ready(() => {
       $weatherInfo.html(weatherInfoHTML);
     };
 
-  // convert from celsius to fahrenheit
-    const convertToFarhenheit = (celsiusTemperature) => {
+  // convert from celsius to fahrenheit using equation
+    const convertToFarheneit = (celsiusTemperature) => {
       return (celsiusTemperature * 9 / 5) + 32;
     };
   });
+
+// notes: remove decimal points, Begin styling: get a background, make search bar & display transparent, random setting?, logo for website & tab, social media links
