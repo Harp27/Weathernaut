@@ -53,7 +53,8 @@ $(document).ready(() => {
 
   // convert from celsius to fahrenheit using equation
     const convertToFarheneit = (celsiusTemperature) => {
-      return (celsiusTemperature * 9 / 5) + 32;
+  // remove decimals, print only whole number
+      return Math.round(celsiusTemperature * 9 / 5) + 32;
     };
   });
 
