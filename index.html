@@ -5,19 +5,31 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weathernaut</title>
+    <link rel="icon" type="image/png" href="./astronaut1.png">
+    <!-- <a href="https://www.flaticon.com/free-icons/astronaut" title="astronaut icons">Astronaut icons created by Smashicons - Flaticon</a>-->
     <script src="https://code.jquery.com/jquery-3.7.0.js" integrity="sha256-JlqSTELeR4TLqP0OG9dxM7yDPqX1ox/HfgiSLBj8+kM=" crossorigin="anonymous"></script>
     <script src="./app.js" defer></script>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Weathernaut</h1>
+    <div class="background">
+        <div class="background"><background class="png"></background></div>
+        </div>
+        
+    <div class="logo">
+    <h1><img src="./astronaut1.png"/> Weathernaut </h1>
+    </div>
     <div>
+       <div class="display">
         <form class="search">
             <input type="text" name="city name" placeholder="Enter a city">
-            <button type="submit">Search</button>
+            <button type="submit">City Name</button>
         </form>
+    <div class="result">
+        <div id="weatherInfo">
+
+        </div>
+        </div>
     </div>
-    <div id="weatherInfo"></div>
-</body>
 </html>
 

@@ -8,4 +8,36 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
     background-position: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.result {
+    color: antiquewhite;
+
+}
+
+.logo {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: slategray;
+    font-family: monospace;
+    font-size: larger;
+    display: flex;
+    align-items: center;
+}
+.logo h1 {
+    display: flex;
+    align-items: center;
+    margin-left: 30px;
+}
+
