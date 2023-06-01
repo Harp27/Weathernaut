@@ -32,19 +32,21 @@ body {
     position: absolute;
     top: 0;
     left: 0;
-    color: slategray;
-    font-family: monospace;
-    font-size: larger;
+    height: 300px;
+    width: auto;
+    margin-right: 10px;
     display: flex;
-    align-items: center;
-}
-.logo h1 {
-    display: flex;
-    align-items: center;
-    margin-left: 30px;
 }
 
 .search {
     position: relative;
+    opacity: 0.50;
 }
 
+.search input[type="text"] {
+    width: 200px;
+    height: 20px; 
+    padding: 10px;
+    font-size: 18px;
+    border-radius: 100px;
+}
