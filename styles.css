@@ -34,7 +34,7 @@ body {
 .search {
     align-items: center;
     justify-content: center;
-    opacity: 0.50;
+    opacity: 0.30;
     display: flex;
     margin-left: 200px;
 }

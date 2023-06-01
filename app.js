@@ -58,5 +58,7 @@ $(document).ready(() => {
   // remove decimals, print only whole number
       return Math.round(celsiusTemperature * 9 / 5) + 32;
     };
+    // page starts with weather in New York
+    getWeatherInfo("New York");
   });
 
