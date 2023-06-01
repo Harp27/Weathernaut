@@ -27,6 +27,7 @@ $(document).ready(() => {
           const celsiusTemperature = data.main.temp;
           const fahrenheitTemperature = convertToFarheneit(celsiusTemperature);
           const weatherInfo = {
+            cityName: location,
             temperature: fahrenheitTemperature,
             description: data.weather[0].description
           };
@@ -40,11 +41,11 @@ $(document).ready(() => {
     };
   // convert from celsius to fahrenheit
     const displayWeatherInfo = (weatherInfo) => {
-      const { temperature, description } = weatherInfo;
+      const { cityName, temperature, description } = weatherInfo;
       const fahrenheitTemperature = convertToFarheneit(temperature);
-  // display the temp, and current description of the weather
+  // display the temp, and current description of the weather; added current weather in "City Name"
       const weatherInfoHTML = `
-        <h2>Current Weather</h2>
+        <h2>Current Weather in ${cityName}</h2>
         <p>Temperature: ${temperature}°F</p>
         <p>Description: ${description}</p>
       `;
@@ -59,4 +60,3 @@ $(document).ready(() => {
     };
   });
 
-// notes: Begin styling: get a background, make search bar & display transparent, random setting?, logo for website & tab, social media links

@@ -54,5 +54,6 @@ div#weatherInfo {
     font-family: monospace;
     font-size: 14px;
     margin-top: 250px;
+    padding: 20px;
     
 }
