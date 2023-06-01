@@ -12,6 +12,7 @@ $(document).ready(() => {
   // make it so we can search by city name and output the data from weatherInfo
       const location = $searchForm.find("input[name='city name']").prop("value");
       location && getWeatherInfo(location);
+      $searchForm.trigger("reset");
     });
   // create a function for location for city name:
     const getWeatherInfo = (location) => {
