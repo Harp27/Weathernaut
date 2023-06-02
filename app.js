@@ -12,6 +12,7 @@ $(document).ready(() => {
   // make it so we can search by city name and output the data from weatherInfo
       const location = $searchForm.find("input[name='city name']").prop("value");
       location && getWeatherInfo(location);
+    // resets search bar after input
       $searchForm.trigger("reset");
     });
   // create a function for location for city name:
@@ -42,10 +43,11 @@ $(document).ready(() => {
   // convert from celsius to fahrenheit
     const displayWeatherInfo = (weatherInfo) => {
       const { cityName, temperature, description } = weatherInfo;
-      const fahrenheitTemperature = convertToFarheneit(temperature);
+
   // display the temp, and current description of the weather; added current weather in "City Name"
       const weatherInfoHTML = `
         <h2>Current Weather in ${cityName}</h2>
+        <img src="${weatherImg(description)}" alt="${description}">
         <p>Temperature: ${temperature}°F</p>
         <p>Description: ${description}</p>
       `;
@@ -53,6 +55,23 @@ $(document).ready(() => {
       $weatherInfo.html(weatherInfoHTML);
     };
 
+    const weatherImg = (description) => {
+      const imageMapping = {
+        "clear sky": "./images/clearsky.png",
+        "shower rain": "./images/rain.png",
+        "rain": "./images/rain.png",
+        "few clouds": "./images/fewclouds.png",
+        "broken clouds": "./images/fewclouds.png",
+        "scattered clouds": "./images/fewclouds.png",
+        "thunderstorm": "./images/thunderstorm.png",
+        "snow": "./images/snow.png",
+        "mist": "./images/mist.png"
+      };
+      if (description.toLowerCase() in imageMapping) {
+        return imageMapping[description.toLowerCase()];
+      }
+      return "./images/clearsky.png";
+    };
   // convert from celsius to fahrenheit using equation
     const convertToFarheneit = (celsiusTemperature) => {
   // remove decimals, print only whole number
@@ -60,5 +79,6 @@ $(document).ready(() => {
     };
     // page starts with weather in New York
     getWeatherInfo("New York");
+
   });
 
