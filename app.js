@@ -71,7 +71,8 @@ $(document).ready(() => {
         "scattered clouds": "./images/fewclouds.png",
         "thunderstorm": "./images/thunderstorm.png",
         "snow": "./images/snow.png",
-        "mist": "./images/mist.png"
+        "mist": "./images/mist.png",
+        "overcast clouds": "./images/fewclouds.png"
       };
       if (description.toLowerCase() in imageMapping) {
         return imageMapping[description.toLowerCase()];
