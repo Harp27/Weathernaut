@@ -36,8 +36,10 @@ $(document).ready(() => {
           displayWeatherInfo(weatherInfo);
         })
   // display an error if city name not correct
-        .catch(() => {
-          $weatherInfo.text("Error retrieving weather information.");
+        .catch((error) => {
+          if (error.responseJSON && error.responseJSON.cod === "404") {
+            displayErrorModal();
+          }
         });
     };
   // convert from celsius to fahrenheit
@@ -47,9 +49,13 @@ $(document).ready(() => {
   // display the temp, and current description of the weather; added current weather in "City Name"
       const weatherInfoHTML = `
         <h2>Current Weather in ${cityName}</h2>
+        <div class="weather-details">
         <img src="${weatherImg(description)}" alt="${description}">
+        <div class="weather-info">
         <p>Temperature: ${temperature}°F</p>
         <p>Description: ${description}</p>
+        </div>
+        </div>
       `;
   // display the weather information on the page
       $weatherInfo.html(weatherInfoHTML);
@@ -79,6 +85,18 @@ $(document).ready(() => {
     };
     // page starts with weather in New York
     getWeatherInfo("New York");
-
+    // add event listener for modal
+    const displayErrorModal = () => {
+      const modal = document.getElementById("errorModal");
+      modal.style.display = "block"
+    };
   });
+
+  const $errorModal = $("#errorModal");
+  const $closeButton = $(".close");
+  $closeButton.on("click", () => {
+    $errorModal.hide();
+  });
+
+
 
