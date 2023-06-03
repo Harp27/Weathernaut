@@ -57,7 +57,7 @@ $(document).ready(() => {
         </div>
         </div>
       `;
-  // display the weather information on the page
+  // display weather information on the page
       $weatherInfo.html(weatherInfoHTML);
     };
 
