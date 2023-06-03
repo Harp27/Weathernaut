@@ -24,4 +24,13 @@
 
 [Click Here](https://weathernaut-zp45.onrender.com/) to visit Weathernaut
 
+# Upcoming Features:
+
+#### Hourly, Daily, and 10-day Forecasts
+#### Temperature buttons for Celsius and Kelvin
+#### Social Media Links
+#### API for your horoscope for that day
+#### API for NASA picture of the day
+#### Facts based on cities for the particular day 
+#### Drop down box when searching for a city/get rid of search button
 
